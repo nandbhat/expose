@@ -419,7 +419,7 @@ def main(
                 naive_mesh.vertices = Vec3d(
                     model_vertices[idx] + hd_params['transl'][idx])
                 naive_mesh.triangles = Vec3i(faces)
-                mesh_fname = osp.join(curr_out_path, f'body_{fname}.ply')
+                mesh_fname = osp.join(curr_out_path, f'body_{fname}.obj')
                 o3d.io.write_triangle_mesh(mesh_fname, naive_mesh)
 
                 # Store the final mesh
@@ -427,7 +427,7 @@ def main(
                 expose_mesh.vertices = Vec3d(
                     final_model_vertices[idx] + hd_params['transl'][idx])
                 expose_mesh.triangles = Vec3i(faces)
-                mesh_fname = osp.join(curr_out_path, f'{fname}.ply')
+                mesh_fname = osp.join(curr_out_path, f'{fname}.obj')
                 o3d.io.write_triangle_mesh(mesh_fname, expose_mesh)
 
             if save_params:
